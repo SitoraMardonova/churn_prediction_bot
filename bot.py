@@ -7,17 +7,17 @@ from telegram.ext import (
     ConversationHandler, ContextTypes
 )
 
-# Holatlar ro'yxati (har bir savol bosqichi uchun)
+
 (TENURE, CONTRACT, INTERNET, MONTHLY, GENDER, PARTNER, DEPENDENTS, SECURITY, TECHSUPPORT, STREAMING, PAYMENT) = range(11)
 
-# Model va scaler fayllarni yuklash
+
 model = joblib.load("churn_model_1.pkl")
 scaler = joblib.load("scaler.pkl")
 
-# Logging sozlamasi
+
 logging.basicConfig(level=logging.INFO)
 
-# Boshlanish
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Salom! /predict buyrug‘i orqali mijoz holatini bashorat qilamiz.")
 
